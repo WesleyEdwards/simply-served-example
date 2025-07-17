@@ -1,0 +1,24 @@
+{
+  "name": "simply-server-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "serve": "ts-node ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.0.0",
+    "mongodb": "^6.12.0",
+    "simply-served": "1.0.14",
+    "ts-node": "^10.9.2",
+    "zod": "4.0.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "typescript": "5.7.3"
+  }
+}
