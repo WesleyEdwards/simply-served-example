@@ -26,13 +26,13 @@ const api = {
       }),
 
     get: async (id, userId) =>
-      await fetch(`${API_URL}/todo/${id}`, {
+      await fetch(`${API_URL}/todo/detail/${id}`, {
         method: "GET",
         headers: {"x-userid": userId},
       }).then((res) => res.json()),
 
     update: async (id, updates, userId) =>
-      await fetch(`${API_URL}/todo/${id}`, {
+      await fetch(`${API_URL}/todo/modify/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
