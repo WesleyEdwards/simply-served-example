@@ -1,4 +1,4 @@
-import express, { type Router } from "express";
+import express, { type Express } from "express";
 import cors from "cors";
 import {
   modelRestEndpoints,
@@ -11,7 +11,7 @@ import todoDb from "./todoDb";
 import { z } from "zod";
 import { TodoDb } from "./types";
 
-const app = express();
+const app = express() as Express & { _meta: any[] };
 
 app.use(express.json());
 app.use(cors()); // Disable cors
@@ -79,7 +79,19 @@ addController<ServerCtx>(app, {
   },
 });
 
-app.use("/", async (_req, res): Promise<any> => {
+// function addClientSdkGeneratorEndpoint(a: Express) {
+//   const app = a as Express & { _meta: any };
+//   // TODO
+//   const sdkStr = app._meta;
+//   console.log(sdkStr);
+//   // Determine endpoints and types from app metadata
+
+//   app.get("/meta/sdk.ts", async (req, res) => {
+//     res.status(200).json(sdkStr);
+//   });
+// }
+
+app.get("/", async (_req, res): Promise<any> => {
   return res.status(200).json("Welcome to my server!");
 });
 
